@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- theme-color: cor da barra de status/navegador quando instalado -->
+  <meta name="theme-color" content="#4b3bb4" />
+  <!-- Sem isso, o navegador nunca considera o site "instalável" -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>WORD GAME</title>
+</head>
+<body>
+  <main class="app-shell">
+    <section id="home-screen" class="screen home-screen">
+      <div class="brand-mark" aria-hidden="true">W</div>
+      <p class="eyebrow">Caça-palavras em inglês</p>
+      <h1>WORD<br /><span>GAME</span></h1>
+      <p class="intro">Descubra a palavra antes que o tempo acabe.</p>
+      <button id="play-button" class="primary-button">▶ <span>Jogar</span></button>
+      <p class="offline-note">● Pronto para jogar offline</p>
+    </section>
+
+    <section id="game-screen" class="screen game-screen hidden">
+      <header class="game-header">
+        <button id="quit-button" class="icon-button" aria-label="Sair do jogo">×</button>
+        <div class="stat"><span>NÍVEL</span><strong id="level">1</strong></div>
+        <div class="stat score-stat"><span>PONTUAÇÃO</span><strong><span id="score">0</span> pts</strong></div>
+      </header>
+
+      <div class="timer-wrap">
+        <div class="timer-track"><div id="timer-bar" class="timer-bar"></div></div>
+        <div class="timer-caption"><span>⏱ TEMPO RESTANTE</span><strong id="time">25</strong></div>
+      </div>
+
+      <div class="hint-card">
+        <div class="bulb" aria-hidden="true">💡</div>
+        <p id="hint">Dica</p>
+      </div>
+
+      <div id="answer" class="answer" aria-label="Resposta montada"></div>
+      <p id="feedback" class="feedback" role="status"></p>
+      <div id="letter-bank" class="letter-bank" aria-label="Banco de letras"></div>
+      <button id="clear-button" class="secondary-button">Limpar resposta</button>
+    </section>
+
+    <section id="result-screen" class="screen result-screen hidden">
+      <div class="result-face" aria-hidden="true">:)</div>
+      <p class="eyebrow">Fim de jogo</p>
+      <h2>Bom trabalho!</h2>
+      <p>Você chegou ao nível <strong id="final-level">1</strong></p>
+      <div class="final-score"><span>PONTUAÇÃO FINAL</span><strong id="final-score">0 pts</strong></div>
+      <button id="restart-button" class="primary-button">Jogar novamente</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
